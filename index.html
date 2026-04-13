@@ -55,21 +55,39 @@
         <div id="timer" class="days-left">Calculando aventura...</div>
     </section>
 
-       <section id="tiempo" class="card">
+           <section id="tiempo" class="card">
         <h2>🌤️ Clima en Directo</h2>
         
         <div class="weather-item">
-            <a class="weatherwidget-io" href="https://forecast7.com/es/n37d81144d96/melbourne/" data-label_1="MELBOURNE" data-label_2="Victoria" data-theme="pure">MELBOURNE</a>
+            <a class="weatherwidget-io" href="https://forecast7.com/es/n37d81144d96/melbourne/" data-label_1="MELBOURNE" data-theme="pure">MELBOURNE</a>
         </div>
         
         <div class="weather-item">
-            <a class="weatherwidget-io" href="https://forecast7.com/es/n20d27148d71/whitsundays/" data-label_1="WHITSUNDAYS" data-label_2="Hamilton Island Area" data-theme="pure">WHITSUNDAYS</a>
+            <a class="weatherwidget-io" href="https://forecast7.com/es/n20d27148d71/whitsunday-islands/" data-label_1="WHITSUNDAYS" data-label_2="Hamilton Island" data-theme="pure">WHITSUNDAYS</a>
         </div>
         
         <div class="weather-item">
-            <a class="weatherwidget-io" href="https://forecast7.com/es/n33d87151d21/sydney/" data-label_1="SÍDNEY" data-label_2="NSW" data-theme="pure">SÍDNEY</a>
+            <a class="weatherwidget-io" href="https://forecast7.com/es/n33d87151d21/sydney/" data-label_1="SÍDNEY" data-theme="pure">SÍDNEY</a>
         </div>
     </section>
+
+    <script>
+    // Script de carga ultra-compatible para iPhone
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+
+    // Tu contador (mantener igual)
+    const travelDate = new Date("August 14, 2026 00:00:00").getTime();
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = travelDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const el = document.getElementById("timer");
+        if (distance < 0) { el.innerHTML = "¡A disfrutar! 🐨"; } 
+        else { el.innerHTML = "Faltan " + days + " días para la aventura"; }
+    }
+    updateTimer();
+</script>
+
 
 
     <section id="itinerario" class="card">
