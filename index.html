@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedición Australia 2026 🇦🇺</title>
+    <style>
+        :root {
+            --azul-au: #002B7F;
+            --rojo-au: #ce1126;
+            --gris-fondo: #f0f2f5;
+        }
+        body { font-family: -apple-system, system-ui, sans-serif; line-height: 1.6; margin: 0; background-color: var(--gris-fondo); color: #1c1e21; }
+        header { background: linear-gradient(135deg, var(--azul-au) 0%, #001440 100%); color: white; padding: 2.5rem 1rem; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        header h1 { margin: 0; font-size: 1.8rem; }
+        header p { margin: 8px 0 0; font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
+        
+        nav { display: flex; justify-content: center; background: var(--rojo-au); padding: 0.7rem; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; text-decoration: none; margin: 0 10px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+
+        .container { max-width: 600px; margin: 1.5rem auto; padding: 0 1rem; }
+        .card { background: white; border-radius: 15px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        
+        .countdown-box { text-align: center; border: 2px solid var(--rojo-au); }
+        .dates-text { color: var(--rojo-au); font-weight: bold; font-size: 1.3rem; display: block; margin-bottom: 5px; }
+        .days-left { font-size: 1.1rem; color: #444; }
+
+        h2 { color: var(--azul-au); font-size: 1.2rem; border-bottom: 2px solid var(--gris-fondo); padding-bottom: 0.5rem; margin-top: 0; display: flex; align-items: center; gap: 8px; }
+        
+        .weather-item { margin-bottom: 15px; border-radius: 10px; overflow: hidden; background: #f9f9f9; min-height: 98px; }
+        
+        .btn-drive { display: block; background: var(--azul-au); color: white; padding: 14px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; font-size: 1rem; }
+        
+        ul.itinerario { list-style: none; padding: 0; }
+        ul.itinerario li { margin-bottom: 12px; padding-left: 30px; position: relative; }
+        ul.itinerario li::before { content: '📍'; position: absolute; left: 0; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🐨 Operación Australia 🇦🇺</h1>
+    <p>Del 14 al 31 de agosto</p>
+</header>
+
+<nav>
+    <a href="#tiempo">Clima</a>
+    <a href="#itinerario">Ruta</a>
+    <a href="#documentos">Drive</a>
+</nav>
+
+<div class="container">
+    <section class="card countdown-box">
+        <span class="dates-text">14 - 31 de agosto, 2026</span>
+        <div id="timer" class="days-left">Calculando aventura...</div>
+    </section>
+
+    <section id="tiempo" class="card">
+        <h2>🌤️ Clima en Directo</h2>
+        <div class="weather-item">
+            <a class="weatherwidget-io" href="https://forecast7.com/es/n37d81144d96/melbourne/" data-label_1="MELBOURNE" data-theme="pure" >MELBOURNE</a>
+        </div>
+        <div class="weather-item">
+            <a class="weatherwidget-io" href="https://forecast7.com/es/n20d35148d95/hamilton-island/" data-label_1="HAMILTON ISLAND" data-theme="pure" >HAMILTON ISLAND</a>
+        </div>
+        <div class="weather-item">
+            <a class="weatherwidget-io" href="https://forecast7.com/es/n33d87151d21/sydney/" data-label_1="SÍDNEY" data-theme="pure" >SÍDNEY</a>
+        </div>
+    </section>
+
+    <section id="itinerario" class="card">
+        <h2>🗺️ Plan de Ruta</h2>
+        <ul class="itinerario">
+            <li><strong>Melbourne:</strong> 14 al 19 de agosto (Ciudad y Great Ocean Road)</li>
+            <li><strong>Hamilton Island:</strong> 20 al 25 de agosto (Whitsundays y Gran Barrera)</li>
+            <li><strong>Sídney:</strong> 26 al 31 de agosto (Opera House y Bondi Beach)</li>
+        </ul>
+    </section>
+
+    <section id="documentos">
+        <a href="#" class="btn-drive">📂 Acceder al Drive Familiar</a>
+    </section>
+</div>
+
+<script>
+    // Carga de Widgets de Clima
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+
+    // Lógica del Contador
+    const travelDate = new Date("August 14, 2026 00:00:00").getTime();
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = travelDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        
+        const el = document.getElementById("timer");
+        if (distance < 0) {
+            el.innerHTML = "¡ESTAMOS EN AUSTRALIA! 🐨🇦🇺";
+        } else {
+            el.innerHTML = "Faltan " + days + " días y " + hours + " horas";
+        }
+    }
+    updateTimer();
+    setInterval(updateTimer, 3600000); // Actualiza cada hora
+</script>
+
+</body>
+</html>
