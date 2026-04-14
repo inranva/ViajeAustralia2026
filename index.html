@@ -56,41 +56,24 @@
     </section>
 
  <section id="tiempo" class="card">
-    <h2>🌤️ Pronóstico del Tiempo</h2>
-    <div style="display: flex; flex-direction: column; gap: 12px;">
-        
-        <a href="https://www.accuweather.com/es/au/melbourne/26296/weather-forecast/26296" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="background: linear-gradient(90deg, #002B7F 0%, #0056b3 100%); color: white; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <span style="display: block; font-size: 0.8rem; opacity: 0.8;">Victoria</span>
-                    <span style="font-weight: bold; font-size: 1.1rem;">MELBOURNE</span>
-                </div>
-                <span style="font-size: 1.5rem;">🏙️</span>
-            </div>
-        </a>
-
-        <a href="https://www.accuweather.com/es/au/hamilton-island/13446/weather-forecast/13446" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="background: linear-gradient(90deg, #008080 0%, #20b2aa 100%); color: white; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <span style="display: block; font-size: 0.8rem; opacity: 0.8;">Whitsundays</span>
-                    <span style="font-weight: bold; font-size: 1.1rem;">HAMILTON ISLAND</span>
-                </div>
-                <span style="font-size: 1.5rem;">🏝️</span>
-            </div>
-        </a>
-
-        <a href="https://www.accuweather.com/es/au/sydney/22889/weather-forecast/22889" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="background: linear-gradient(90deg, #ce1126 0%, #ff4d4d 100%); color: white; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <span style="display: block; font-size: 0.8rem; opacity: 0.8;">NSW</span>
-                    <span style="font-weight: bold; font-size: 1.1rem;">SÍDNEY</span>
-                </div>
-                <span style="font-size: 1.5rem;">🌅</span>
-            </div>
-        </a>
+    <h2>🌤️ Clima en Directo</h2>
+    
+    <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-37.814&lon=144.963&detailLat=-37.814&detailLon=144.963&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">MELBOURNE</p>
     </div>
-    <p style="font-size: 0.8rem; color: #666; margin-top: 10px; text-align: center;">Pulsa en cada ciudad para ver el detalle</p>
+
+    <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-20.355&lon=148.955&detailLat=-20.355&detailLon=148.955&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">HAMILTON ISLAND</p>
+    </div>
+
+    <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-33.868&lon=151.209&detailLat=-33.868&detailLon=151.209&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">SÍDNEY</p>
+    </div>
 </section>
+
 
 
 
