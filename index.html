@@ -55,21 +55,43 @@
         <div id="timer" class="days-left">Calculando aventura...</div>
     </section>
 
-  <section id="tiempo" class="card">
-    <h2>🌤️ Clima en Directo</h2>
-    
-    <div class="weather-item">
-        <a class="weatherwidget-io" href="https://forecast7.com/es/n37d81144d96/melbourne/" data-label_1="MELBOURNE" data-theme="pure">MELBOURNE</a>
+ <section id="tiempo" class="card">
+    <h2>🌤️ Pronóstico del Tiempo</h2>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+        
+        <a href="https://www.accuweather.com/es/au/melbourne/26296/weather-forecast/26296" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="background: linear-gradient(90deg, #002B7F 0%, #0056b3 100%); color: white; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <span style="display: block; font-size: 0.8rem; opacity: 0.8;">Victoria</span>
+                    <span style="font-weight: bold; font-size: 1.1rem;">MELBOURNE</span>
+                </div>
+                <span style="font-size: 1.5rem;">🏙️</span>
+            </div>
+        </a>
+
+        <a href="https://www.accuweather.com/es/au/hamilton-island/13446/weather-forecast/13446" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="background: linear-gradient(90deg, #008080 0%, #20b2aa 100%); color: white; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <span style="display: block; font-size: 0.8rem; opacity: 0.8;">Whitsundays</span>
+                    <span style="font-weight: bold; font-size: 1.1rem;">HAMILTON ISLAND</span>
+                </div>
+                <span style="font-size: 1.5rem;">🏝️</span>
+            </div>
+        </a>
+
+        <a href="https://www.accuweather.com/es/au/sydney/22889/weather-forecast/22889" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="background: linear-gradient(90deg, #ce1126 0%, #ff4d4d 100%); color: white; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <span style="display: block; font-size: 0.8rem; opacity: 0.8;">NSW</span>
+                    <span style="font-weight: bold; font-size: 1.1rem;">SÍDNEY</span>
+                </div>
+                <span style="font-size: 1.5rem;">🌅</span>
+            </div>
+        </a>
     </div>
-    
-    <div class="weather-item">
-        <a class="weatherwidget-io" href="https://forecast7.com/es/n20d27148d71/airlie-beach/" data-label_1="HAMILTON ISLAND" data-label_2="Whitsundays" data-theme="pure">HAMILTON ISLAND</a>
-    </div>
-    
-    <div class="weather-item">
-        <a class="weatherwidget-io" href="https://forecast7.com/es/n33d87151d21/sydney/" data-label_1="SÍDNEY" data-theme="pure">SÍDNEY</a>
-    </div>
+    <p style="font-size: 0.8rem; color: #666; margin-top: 10px; text-align: center;">Pulsa en cada ciudad para ver el detalle</p>
 </section>
+
 
 
 
