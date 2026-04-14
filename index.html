@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,15 +32,18 @@
         /* Estilos Checklist */
         .todo-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 0.9rem; }
 
-        .btn-maps { display: inline-block; background: #34a853; color: white; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; margin-top: 5px; }
+        .btn-maps { display: inline-block; background: #34a853; color: white; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; margin-top: 5px; margin-right: 5px; }
         .btn-drive { display: block; background: var(--azul-au); color: white; padding: 14px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; }
+        
+        .dates-text { color: #666; font-weight: bold; margin-bottom: 10px; }
+        .weather-container { margin: 15px 0; border-radius: 10px; overflow: hidden; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>🐨 Viaje a Australia 🇦🇺</h1>
-    <p> 🗓️ Del 14 al 31 de agosto de 2026 </p>
+    <p>🗓️ Del 14 al 31 de agosto de 2026</p>
     <p id="timer">Calculando aventura...</p>
 </header>
 
@@ -58,16 +60,16 @@
 
     <section id="mapa" class="card">
         <h2>🗺️ Mapa de Ruta</h2>
-        <div style="background: #e3f2fd; height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-            <p>📍 [Aquí insertaremos el mapa interactivo con pins a las etapas]</p>
+        <div style="background: #e3f2fd; height: 150px; border-radius: 10px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+            <p>📍 [Mapa Interactivo en Construcción]</p>
         </div>
     </section>
 
-               <section id="melbourne" class="card">
+    <section id="melbourne" class="card">
         <h2>🇦🇺 Etapa 1: Melbourne</h2>
-        <p class="dates-text" style="font-size: 1rem;">16 - 21 de Agosto</p>
+        <p class="dates-text">16 - 21 de Agosto</p>
         
-        <div class="weather-item" style="min-height: 250px; background: white; border: none; margin-bottom: 0;">
+        <div class="weather-container">
             <iframe src="https://www.meteoblue.com/en/weather/widget/three/melbourne_australia_2158177?geoloc=fixed&nocurrent=0&nooo=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright" frameborder="0" scrolling="NO" allowtransparency="true" style="width: 100%; height: 250px;"></iframe>
         </div>
 
@@ -75,135 +77,109 @@
         <div class="vuelo-info" style="border-left: 3px solid #c1121f;">
             <div style="margin-bottom: 10px;">
                 <strong>🛫 Valencia ➔ Estambul</strong><br>
-                14 Ago 18:45 — 23:35 | <small>⏳ 3h 50min</small><br>
-                <span style="color: #666; font-size: 0.8rem;">🛑 Escala: 2h 20min en Estambul</span>
+                14 Ago 18:45 — 23:35 | <small>⏳ 3h 50min</small>
             </div>
             <div style="margin-bottom: 10px;">
                 <strong>🛫 Estambul ➔ Bangkok</strong><br>
-                15 Ago 01:50 — 15:25 | <small>⏳ 9h 35min</small><br>
-                <span style="color: #666; font-size: 0.8rem;">🛑 Escala: 4h 15min en Bangkok</span>
+                15 Ago 01:50 — 15:25 | <small>⏳ 9h 35min</small>
             </div>
             <div>
                 <strong>🛫 Bangkok ➔ Melbourne</strong><br>
-                15 Ago 19:40 — 16 Ago 07:30 | <small>⏳ 8h 50min aprox.</small>
+                15 Ago 19:40 — 16 Ago 07:30 | <small>⏳ 8h 50min</small>
             </div>
         </div>
 
         <h3>🏨 Alojamiento</h3>
         <p><strong>Meriton Suites Melbourne</strong><br>
         <span style="font-size: 0.9rem; color: #555;">📍 140 King St, Melbourne VIC 3000</span></p>
-        <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia/" target="_blank" class="btn-maps">🚖 Ver ruta desde Aeropuerto</a>
+        <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia" target="_blank" class="btn-maps">🚖 Ruta desde Aeropuerto</a>
 
-                               <h3>📅 Planning</h3>
+        <h3>📅 Planning</h3>
         <div style="font-size: 0.9rem;">
             
             <div style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
                 <p><strong>DOMINGO 16: Llegada</strong></p>
-                <div style="width: 100%; margin: 10px 0;">
-    <img src="https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=800&q=80" 
-         alt="Melbourne City" 
-         style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px; display: block; background-color: #ddd;">
-</div>
-
                 <ul style="padding-left: 20px;">
                     <li><strong>07:30:</strong> Aterrizaje y traslado al hotel.</li>
+                    <li>Día de aclimatación y paseo por Southbank.</li>
                 </ul>
-                <a href="http://googleusercontent.com/maps.google.com/9" target="_blank" class="btn-maps" style="background: #4285F4;">📍 Ir al Hotel</a>
+                <a href="https://maps.google.com/?q=Meriton+Suites+Melbourne" target="_blank" class="btn-maps" style="background: #4285F4;">📍 Ubicación Hotel</a>
             </div>
 
             <div style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
                 <p><strong>LUNES 17: Tour y Vistas</strong></p>
                 <div style="margin-left: 10px; border-left: 2px solid #eee; padding-left: 10px;">
                     <p><strong>1. Tour a pie (09:30):</strong></p>
-             
-                    <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia/0" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Punto de encuentro</a>
+                    <a href="https://maps.google.com/?q=State+Library+Victoria" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Punto de encuentro</a>
                     <p style="font-size: 0.8rem; background: #fffde7; padding: 8px; border-radius: 5px;">
-                        <strong>⚠️ Consideración:</strong> Calzado cómodo (3h andando) y agua.
+                        <strong>⚠️ Nota:</strong> Calzado cómodo y agua. Duración: 3h.
                     </p>
                     
                     <p><strong>2. Melbourne Skydeck VR:</strong></p>
-             
-
-                    <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia/1" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Cómo llegar al Skydeck</a>
+                    <a href="https://maps.google.com/?q=Melbourne+Skydeck" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Cómo llegar</a>
                 </div>
             </div>
 
             <div style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
                 <p><strong>MARTES 18: Great Ocean Road</strong></p>
-        
-                <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia/2" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Punto de encuentro</a>
+                <a href="https://maps.google.com/?q=Great+Ocean+Road+Tour+Meeting+Point" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Punto de encuentro</a>
                 <p style="font-size: 0.8rem; background: #fffde7; padding: 8px; border-radius: 5px;">
-                    <strong>⚠️ Consideración:</strong> Día largo. Llevar chaqueta para el viento en los 12 Apóstoles.
+                    <strong>⚠️ Nota:</strong> Llevar chaqueta. El viento en los 12 Apóstoles es fuerte.
                 </p>
             </div>
 
             <div style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
                 <p><strong>MIÉRCOLES 19: Phillip Island</strong></p>
-                
-                <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia/3" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Punto de encuentro</a>
+                <a href="https://maps.google.com/?q=Phillip+Island+Tour+Meeting+Point" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Punto de encuentro</a>
                 <p style="font-size: 0.8rem; background: #fffde7; padding: 8px; border-radius: 5px;">
-                    <strong>⚠️ Consideración:</strong> Ropa de mucho abrigo para la noche. Fotos prohibidas.
+                    <strong>⚠️ Nota:</strong> Ropa de mucho abrigo. Fotos prohibidas durante el desfile.
                 </p>
             </div>
 
             <div style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
                 <p><strong>JUEVES 20: Melbourne Park</strong></p>
-             
-                <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia/4" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Entrada Principal</a>
+                <a href="https://maps.google.com/?q=Melbourne+Park" target="_blank" class="btn-maps" style="background: #34A853; margin-bottom: 10px;">📍 Entrada Principal</a>
             </div>
             
-            <div style="padding-top: 15px;">
+            <div style="padding-top: 5px;">
                 <p><strong>VIERNES 21: Rumbo al Paraíso</strong></p>
                 <div style="margin-left: 10px; border-left: 2px solid #005bb7; padding-left: 10px;">
-                    <p><strong>1. Check-out y Traslado (05:45):</strong></p>
-                    <a href="https://www.google.com/maps/dir/Meriton+Suites+Melbourne/Melbourne+Airport+(MEL)+Terminal+1" target="_blank" class="btn-maps" style="background: #4285F4; margin-bottom: 10px;">🚖 Ruta al Aeropuerto (MEL)</a>
+                    <p><strong>1. Traslado (05:45):</strong></p>
+                    <a href="https://maps.google.com/?q=Melbourne+Airport" target="_blank" class="btn-maps" style="background: #4285F4; margin-bottom: 10px;">🚖 Ir al Aeropuerto</a>
 
                     <p><strong>2. Vuelo QF1596:</strong></p>
-                    <div class="vuelo-info" style="border: 1px solid #eee; background: #f9f9f9; padding: 12px; border-radius: 8px; font-size: 0.85rem;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Qantas_airways_logo.svg/512px-Qantas_airways_logo.svg.png" alt="Qantas" style="height: 20px; margin-bottom: 8px; display: block;"><br>
+                    <div class="vuelo-info">
                         <strong>MEL ➔ HTI</strong><br>
                         🕒 08:15 — 11:20 | ⏳ 3h 05m<br>
                         🎫 Localizador: <strong>D9HGRL</strong>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
-
-        </div>
-
-
     </section>
-
 
     <section id="hamilton" class="card">
         <h2>🏝️ Etapa 2: Hamilton Island</h2>
-        <p><strong>📅 21 - 26 de Agosto</strong></p>
-
-        <div class="weather-item" style="min-height: 250px; background: white; border: none; margin-bottom: 0;">
-        <iframe src="https://www.meteoblue.com/en/weather/widget/three/hamilton-island_australia_2164344?geoloc=fixed&nocurrent=0&nooo=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright" frameborder="0" scrolling="NO" allowtransparency="true" style="width: 100%; height: 250px;"></iframe>
-    </div>
-
-        <h3>✈️ Vuelo Interno</h3>
-        </section>
+        <p class="dates-text">21 - 26 de Agosto</p>
+        <div class="weather-container">
+            <iframe src="https://www.meteoblue.com/en/weather/widget/three/hamilton-island_australia_2164344?geoloc=fixed&nocurrent=0&nooo=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright" frameborder="0" scrolling="NO" allowtransparency="true" style="width: 100%; height: 250px;"></iframe>
+        </div>
+        <p>Alojamiento y actividades por confirmar...</p>
+    </section>
 
     <section id="sydney" class="card">
         <h2>🏙️ Etapa 3: Sídney</h2>
-        <p><strong>📅 26 - 31 de Agosto</strong></p>
-        
-        <div class="weather-item" style="min-height: 250px; background: white; border: none; margin-bottom: 0;">
-        <iframe src="https://www.meteoblue.com/en/weather/widget/three/sydney_australia_2147714?geoloc=fixed&nocurrent=0&nooo=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright" frameborder="0" scrolling="NO" allowtransparency="true" style="width: 100%; height: 250px;"></iframe>
-    </div>
+        <p class="dates-text">26 - 31 de Agosto</p>
+        <div class="weather-container">
+            <iframe src="https://www.meteoblue.com/en/weather/widget/three/sydney_australia_2147714?geoloc=fixed&nocurrent=0&nooo=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright" frameborder="0" scrolling="NO" allowtransparency="true" style="width: 100%; height: 250px;"></iframe>
+        </div>
+        <p>Alojamiento y actividades por confirmar...</p>
     </section>
-
-
 
     <section id="todo" class="card">
         <h2>📝 Pendientes</h2>
         <div class="todo-item"><input type="checkbox"> Sacar Visados (eVisitor)</div>
-        <div class="todo-item"><input type="checkbox"> Reservar cena en Sídney</div>
+        <div class="todo-item"><input type="checkbox"> Reservar cenas especiales</div>
         <div class="todo-item"><input type="checkbox"> Seguro de viaje</div>
     </section>
 
@@ -214,7 +190,7 @@
 </div>
 
 <script>
-    const travelDate = new Date("August 14, 2026 00:00:00").getTime();
+    const travelDate = new Date("August 14, 2026 18:45:00").getTime();
     function updateTimer() {
         const now = new Date().getTime();
         const distance = travelDate - now;
@@ -222,9 +198,9 @@
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const el = document.getElementById("timer");
         if (distance < 0) { el.innerHTML = "¡A disfrutar! 🐨"; } 
-        else { el.innerHTML = "⏳Faltan " + days + " días y " + hours + "h para la aventura"; }
+        else { el.innerHTML = "⏳ Faltan " + days + " días y " + hours + "h para la aventura"; }
     }
-    setInterval(updateTimer, 3600000);
+    setInterval(updateTimer, 60000);
     updateTimer();
 </script>
 
