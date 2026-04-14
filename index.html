@@ -40,7 +40,6 @@
 
 <header>
     <h1>🐨 Viaje a Australia 🇦🇺</h1>
-    <p>Del 14 al 31 de agosto</p>
 </header>
 
 <nav>
@@ -51,7 +50,7 @@
 
 <div class="container">
     <section class="card countdown-box">
-        <span class="dates-text">14 - 31 de agosto, 2026</span>
+        <span class="dates-text">🗓️ Del 14 al 31 de agosto de 2026</span>
         <div id="timer" class="days-left">Calculando aventura...</div>
     </section>
 
@@ -95,7 +94,7 @@
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const el = document.getElementById("timer");
         if (distance < 0) { el.innerHTML = "¡A disfrutar! 🐨"; } 
-        else { el.innerHTML = "Faltan " + days + " ⏳"; }
+        else { el.innerHTML = "Faltan " + days + " días ⏳"; }
     }
     updateTimer();
 </script>
