@@ -69,9 +69,10 @@
         <h2>🇦🇺 Etapa 1: Melbourne</h2>
         <p class="dates-text">16 - 21 de Agosto</p>
         
-       <div class="weather-container" style="margin: 15px 0;">
-   <a class="weatherwidget-io" href="https://forecast7.com/es/n37s81144s96/melbourne/" data-label_1="MELBOURNE" data-label_2="Victoria" data-font="Arial Black" data-icons="Climacons Animated" data-mode="Forecast" data-theme="pure" >MELBOURNE</a>
-</div>
+       <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-37.814&lon=144.963&detailLat=-37.814&detailLon=144.963&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">MELBOURNE</p>
+    </div>
 
 
         <h3>✈️ Vuelos (Turkish Airlines)</h3>
@@ -162,9 +163,10 @@
     <section id="hamilton" class="card">
         <h2>🏝️ Etapa 2: Hamilton Island</h2>
         <p class="dates-text">21 - 26 de Agosto</p>
-     <div class="weather-container" style="margin: 15px 0;">
-   <a class="weatherwidget-io" href="https://forecast7.com/es/n20s35148s96/hamilton-island/" data-label_1="HAMILTON ISLAND" data-label_2="Queensland" data-font="Arial Black" data-icons="Climacons Animated" data-mode="Forecast" data-theme="pure" >HAMILTON ISLAND</a>
-</div>
+      <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-20.355&lon=148.955&detailLat=-20.355&detailLon=148.955&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">HAMILTON ISLAND</p>
+    </div>
 
         <p>Alojamiento y actividades por confirmar...</p>
     </section>
@@ -172,9 +174,10 @@
     <section id="sydney" class="card">
         <h2>🏙️ Etapa 3: Sídney</h2>
         <p class="dates-text">26 - 31 de Agosto</p>
-       <div class="weather-container" style="margin: 15px 0;">
-   <a class="weatherwidget-io" href="https://forecast7.com/es/n33s87151s21/sydney/" data-label_1="SÍDNEY" data-label_2="New South Wales" data-font="Arial Black" data-icons="Climacons Animated" data-mode="Forecast" data-theme="pure" >SÍDNEY</a>
-</div>
+          <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-33.868&lon=151.209&detailLat=-33.868&detailLon=151.209&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">SÍDNEY</p>
+    </div>
 
 
         <p>Alojamiento y actividades por confirmar...</p>
@@ -207,11 +210,6 @@
     setInterval(updateTimer, 60000);
     updateTimer();
 </script>
-
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
-
 
 </body>
 </html>
