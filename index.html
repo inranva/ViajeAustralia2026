@@ -69,30 +69,9 @@
         <h2>🇦🇺 Etapa 1: Melbourne</h2>
         <p class="dates-text">16 - 21 de Agosto</p>
         
-        <div class="weather-container" style="min-height: 150px;">
-    <div class="tomorrow"
-       data-location-id="001854"
-       data-location-name="Melbourne, VIC"
-       data-display-type="compact"
-       data-units="metric"
-       style="position:relative;">
-       <a href="https://www.tomorrow.io/weather/" rel="nofollow noopener noreferrer" target="_blank" style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%; border: 0; z-index: 1;">
-          <img src="https://static.tomorrow.io/v1/assets/hub-6/tomorrow-logo-light.svg" width="140" height="15" alt="Powered by Tomorrow.io" />
-       </a>
-    </div>
-    <script>
-       (function(d, s, id) {
-           if (d.getElementById(id)) return;
-           var fjs = d.getElementsByTagName(s)[0];
-           var js = d.createElement(s);
-           js.id = id;
-           js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-           fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'tomorrow-sdk'));
-    </script>
+       <div class="weather-container" style="margin: 15px 0;">
+   <a class="weatherwidget-io" href="https://forecast7.com/es/n37s81144s96/melbourne/" data-label_1="MELBOURNE" data-label_2="Victoria" data-font="Arial Black" data-icons="Climacons Animated" data-mode="Forecast" data-theme="pure" >MELBOURNE</a>
 </div>
-
-
 
 
         <h3>✈️ Vuelos (Turkish Airlines)</h3>
@@ -183,21 +162,9 @@
     <section id="hamilton" class="card">
         <h2>🏝️ Etapa 2: Hamilton Island</h2>
         <p class="dates-text">21 - 26 de Agosto</p>
-       <div class="weather-container" style="min-height: 150px;">
-    <div class="tomorrow"
-       data-location-id="013697"
-       data-location-name="Hamilton Island, QLD"
-       data-display-type="compact"
-       data-units="metric"
-       style="position:relative;">
-       <a href="https://www.tomorrow.io/weather/" rel="nofollow noopener noreferrer" target="_blank" style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%; border: 0; z-index: 1;">
-          <img src="https://static.tomorrow.io/v1/assets/hub-6/tomorrow-logo-light.svg" width="140" height="15" alt="Powered by Tomorrow.io" />
-       </a>
-    </div>
+     <div class="weather-container" style="margin: 15px 0;">
+   <a class="weatherwidget-io" href="https://forecast7.com/es/n20s35148s96/hamilton-island/" data-label_1="HAMILTON ISLAND" data-label_2="Queensland" data-font="Arial Black" data-icons="Climacons Animated" data-mode="Forecast" data-theme="pure" >HAMILTON ISLAND</a>
 </div>
-
-
-
 
         <p>Alojamiento y actividades por confirmar...</p>
     </section>
@@ -205,19 +172,9 @@
     <section id="sydney" class="card">
         <h2>🏙️ Etapa 3: Sídney</h2>
         <p class="dates-text">26 - 31 de Agosto</p>
-        <div class="weather-container" style="min-height: 150px;">
-    <div class="tomorrow"
-       data-location-id="001844"
-       data-location-name="Sídney, NSW"
-       data-display-type="compact"
-       data-units="metric"
-       style="position:relative;">
-       <a href="https://www.tomorrow.io/weather/" rel="nofollow noopener noreferrer" target="_blank" style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%; border: 0; z-index: 1;">
-          <img src="https://static.tomorrow.io/v1/assets/hub-6/tomorrow-logo-light.svg" width="140" height="15" alt="Powered by Tomorrow.io" />
-       </a>
-    </div>
+       <div class="weather-container" style="margin: 15px 0;">
+   <a class="weatherwidget-io" href="https://forecast7.com/es/n33s87151s21/sydney/" data-label_1="SÍDNEY" data-label_2="New South Wales" data-font="Arial Black" data-icons="Climacons Animated" data-mode="Forecast" data-theme="pure" >SÍDNEY</a>
 </div>
-
 
 
         <p>Alojamiento y actividades por confirmar...</p>
@@ -250,6 +207,11 @@
     setInterval(updateTimer, 60000);
     updateTimer();
 </script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
 
 </body>
 </html>
