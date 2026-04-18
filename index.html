@@ -61,12 +61,43 @@
 
 <div class="container">
 
-    <section id="mapa" class="card">
-        <h2>🗺️ Mapa de Ruta</h2>
-        <div style="background: #e3f2fd; height: 150px; border-radius: 10px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-            <p>📍 [Mapa Interactivo en Construcción]</p>
+   <section id="mapa" class="card">
+    <h2>🗺️ Mapa de Ruta</h2>
+    <div style="position: relative; background: #e3f2fd; border-radius: 12px; padding: 20px; overflow: hidden; border: 1px solid #bbdefb;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background: rgba(255,255,255,0.7); border-radius: 10px;">
+            <div style="text-align: center;">
+                <span style="font-size: 1.5rem;">🏙️</span><br>
+                <small style="font-weight: bold; color: var(--azul-au);">Melbourne</small>
+            </div>
+            <div style="flex-grow: 1; height: 2px; border-top: 2px dashed var(--azul-au); margin: 0 10px; position: relative;">
+                <span style="position: absolute; top: -10px; left: 45%;">✈️</span>
+            </div>
+            <div style="text-align: center;">
+                <span style="font-size: 1.5rem;">🏝️</span><br>
+                <small style="font-weight: bold; color: var(--azul-au);">Hamilton Isl.</small>
+            </div>
+            <div style="flex-grow: 1; height: 2px; border-top: 2px dashed var(--azul-au); margin: 0 10px; position: relative;">
+                <span style="position: absolute; top: -10px; left: 45%;">✈️</span>
+            </div>
+            <div style="text-align: center;">
+                <span style="font-size: 1.5rem;">🌉</span><br>
+                <small style="font-weight: bold; color: var(--azul-au);">Sídney</small>
+            </div>
         </div>
-    </section>
+
+        <p style="font-size: 0.85rem; color: #444; margin-bottom: 15px; text-align: center;">
+            Haz clic para ver las ubicaciones clave y puntos de interés de cada etapa en Google Maps:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <a href="https://www.google.com/maps/d/u/0/viewer?mid=1_vY_N-S0D_Yf-kR_A-y_z-R-y_z" target="_blank" class="btn-maps" style="margin: 0; text-align: center; background: #4285F4;">📍 Ver Ruta Completa</a>
+            <a href="https://www.google.com/maps/search/Great+Ocean+Road+12+Apostles" target="_blank" class="btn-maps" style="margin: 0; text-align: center; background: #34a853;">🌊 Great Ocean Rd</a>
+            <a href="https://www.google.com/maps/search/Whitehaven+Beach+Whitsundays" target="_blank" class="btn-maps" style="margin: 0; text-align: center; background: #fb8c00;">🏖️ Whitehaven Beach</a>
+            <a href="https://www.google.com/maps/search/Blue+Mountains+Scenic+World" target="_blank" class="btn-maps" style="margin: 0; text-align: center; background: #ce1126;">⛰️ Blue Mountains</a>
+        </div>
+    </div>
+</section>
+
 
     <section id="melbourne" class="card">
         <h2>🇦🇺 Etapa 1: Melbourne</h2>
