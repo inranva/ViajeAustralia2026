@@ -13,8 +13,10 @@
         }
         body { font-family: -apple-system, system-ui, sans-serif; line-height: 1.6; margin: 0; background-color: var(--gris-fondo); color: #1c1e21; scroll-behavior: smooth; }
         
+        /* Cabecera */
         header { background: linear-gradient(135deg, var(--azul-au) 0%, #001440 100%); color: white; padding: 2rem 1rem; text-align: center; }
         
+        /* Navegación */
         nav { display: flex; overflow-x: auto; background: var(--rojo-au); padding: 0.7rem; position: sticky; top: 0; z-index: 1000; white-space: nowrap; }
         nav a { color: white; text-decoration: none; margin: 0 10px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
 
@@ -24,16 +26,20 @@
         h2 { color: var(--azul-au); font-size: 1.2rem; border-bottom: 2px solid var(--gris-fondo); padding-bottom: 0.5rem; margin-top: 0; }
         h3 { color: var(--verde-etapa); font-size: 1rem; margin-top: 1.5rem; border-left: 4px solid var(--verde-etapa); padding-left: 10px; }
 
+        /* Estilos Vuelos */
         .vuelo-info { background: #f8f9fa; border-radius: 8px; padding: 10px; margin: 10px 0; border: 1px solid #e0e0e0; font-size: 0.9rem; }
+        
+        /* Estilos Checklist */
         .todo-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 0.9rem; }
 
-        .btn-maps { display: inline-block; background: #34a853; color: white; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; margin-top: 5px; }
+        .btn-maps { display: inline-block; background: #34a853; color: white; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; margin-top: 5px; margin-right: 5px; box-sizing: border-box; }
         .btn-drive { display: block; background: var(--azul-au); color: white; padding: 14px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; }
         
         .dates-text { color: #666; font-weight: bold; margin-bottom: 10px; }
-        .day-block { border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
-        .day-block:last-child { border-bottom: none; }
-        .activity-card { margin: 10px 0; padding: 10px; border: 1px solid #eee; border-radius: 10px; background: #fff; }
+        .weather-container { margin: 15px 0; border-radius: 10px; overflow: hidden; }
+
+        /* Clase unificada para los bloques de días */
+        .day-block { border: 1px solid #eee; border-radius: 12px; padding: 15px; margin-bottom: 15px; background: #fff; }
     </style>
 </head>
 <body>
@@ -57,7 +63,7 @@
 
     <section id="mapa" class="card">
         <h2>🗺️ Mapa de Ruta</h2>
-        <div style="background: #e3f2fd; height: 100px; border-radius: 10px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+        <div style="background: #e3f2fd; height: 150px; border-radius: 10px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
             <p>📍 [Mapa Interactivo en Construcción]</p>
         </div>
     </section>
@@ -66,79 +72,151 @@
         <h2>🇦🇺 Etapa 1: Melbourne</h2>
         <p class="dates-text">16 - 21 de Agosto</p>
         
-        <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
-            <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-37.814&lon=144.963&detailLat=-37.814&detailLon=144.963&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
-        </div>
+       <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-37.814&lon=144.963&detailLat=-37.814&detailLon=144.963&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">MELBOURNE</p>
+    </div>
+
 
         <h3>✈️ Vuelos (Turkish Airlines)</h3>
         <div class="vuelo-info" style="border-left: 3px solid #c1121f; padding: 15px;">
-            🎫 Localizador: <strong>UTX2TN</strong>
-            <div style="margin-top: 10px;"><strong>🛫 Valencia ➔ Estambul:</strong> 14 Ago 18:45</div>
-            <div style="font-size: 0.8rem; color: #777; margin: 5px 0 5px 20px; border-left: 1px dashed #ccc; padding-left: 10px;">🛑 Escala: 2h 20min</div>
-            <div><strong>🛫 Estambul ➔ Bangkok:</strong> 15 Ago 01:50</div>
-            <div style="font-size: 0.8rem; color: #777; margin: 5px 0 5px 20px; border-left: 1px dashed #ccc; padding-left: 10px;">🛑 Escala: 4h 15min</div>
-            <div><strong>🛫 Bangkok ➔ Melbourne:</strong> 15 Ago 19:40</div>
-        </div>
+        🎫 Localizador: <strong>UTX2TN</strong>
+     <div style="margin-bottom: 5px;">
+        <strong>🛫 Valencia ➔ Estambul</strong><br>
+        14 Ago 18:45 — 23:35 | <small>⏳ 3h 50min</small>
+    </div>
+    
+    <div style="font-size: 0.8rem; color: #777; margin: 8px 0 8px 20px; border-left: 1px dashed #ccc; padding-left: 10px;">
+        🛑 Escala en Estambul: <strong>2h 20min</strong>
+    </div>
+
+    <div style="margin-bottom: 5px;">
+        <strong>🛫 Estambul ➔ Bangkok</strong><br>
+        15 Ago 01:50 — 15:25 | <small>⏳ 9h 35min</small>
+    </div>
+
+    <div style="font-size: 0.8rem; color: #777; margin: 8px 0 8px 20px; border-left: 1px dashed #ccc; padding-left: 10px;">
+        🛑 Escala en Bangkok: <strong>4h 15min</strong>
+    </div>
+
+    <div>
+        <strong>🛫 Bangkok ➔ Melbourne</strong><br>
+        15 Ago 19:40 — 16 Ago 07:30 | <small>⏳ 8h 50min</small>
+    </div>
+</div>
+
 
         <h3>🏨 Alojamiento</h3>
         <p><strong>Meriton Suites Melbourne</strong><br>
         <span style="font-size: 0.9rem; color: #555;">📍 140 King St, Melbourne VIC 3000</span></p>
-        <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia" target="_blank" class="btn-maps">🚖 Ruta Aeropuerto</a>
+        <a href="https://www.google.com/maps/dir/Melbourne+Airport+(MEL),+Arrival+Dr,+Melbourne+Airport+VIC+3045,+Australia/Meriton+Suites+Melbourne,+King+Street,+Melbourne+VIC,+Australia" target="_blank" class="btn-maps">🚖 Ruta desde Aeropuerto (Uber o taxi)</a>
 
         <h3>📅 Planning</h3>
         <div style="font-size: 0.9rem;">
+            
             <div class="day-block">
                 <p><strong>DOMINGO 16: Llegada</strong></p>
-                <div class="activity-card">
-                    <ul style="margin: 0; padding-left: 20px;">
-                        <li><strong>07:30:</strong> Aterrizaje y traslado al hotel.</li>
-                        <li>Día de aclimatación y paseo por Southbank.</li>
-                    </ul>
-                    <a href="https://maps.google.com/?q=Meriton+Suites+Melbourne" target="_blank" class="btn-maps" style="background: #4285F4;">📍 Ubicación Hotel</a>
-                </div>
+                <ul style="padding-left: 20px;">
+                    <li><strong>07:30:</strong> Aterrizaje y traslado al hotel.</li>
+                    <li>Día de aclimatación y paseo por Southbank.</li>
+                </ul>
+                <a href="https://maps.google.com/?q=Meriton+Suites+Melbourne" target="_blank" class="btn-maps" style="background: #4285F4;">📍 Ubicación Hotel</a>
             </div>
 
             <div class="day-block">
                 <p><strong>LUNES 17: Tour y Vistas</strong></p>
-                <div class="activity-card">
-                    <p><strong>1. Melbourne City Walking Tour (09:30):</strong></p>
-                    <p style="font-size: 0.85rem;">Histórico CBD y laneways. Punto de encuentro: <a href="https://maps.app.goo.gl/LWbNA3HgLz69SESw9?g_st=ic" target="_blank">Ver Mapa</a></p>
-                </div>
-                <div class="activity-card">
-                    <p><strong>2. Melbourne Skydeck VR:</strong></p>
-                    <p style="font-size: 0.85rem;">Vistas 360° y experiencia Voyager. <a href="https://maps.google.com/?q=Melbourne+Skydeck" target="_blank">Ver Mapa</a></p>
-                </div>
+                <div style="margin-left: 10px; border-left: 2px solid #eee; padding-left: 10px;">
+                    <p><strong>1. Tour a pie (09:30):</strong></p>
+                    <div style="margin-bottom: 25px; padding: 10px; border: 1px solid #eee; border-radius: 10px;">
+    <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Melbourne City Walking Tour</p>
+    <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> 09:30 AM (Duración: 3h)</p>
+    <p style="margin: 5px 0;"><strong>🗺️ Punto de encuentro:</strong> 
+        <a href="https://maps.app.goo.gl/LWbNA3HgLz69SESw9?g_st=ic" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+    </p>
+    <p style="margin: 5px 0;"><strong>📝 Descripción:</strong> Recorrido histórico por el CBD, explorando los famosos callejones (laneways), el arte urbano y la arquitectura victoriana de la ciudad.</p>
+    <p style="margin: 5px 0; font-size: 0.85rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+        <strong>⚠️ Nota:</strong> Se camina bastante. Imprescindible calzado cómodo y llevar una botella de agua.
+    </p>
+    
+     </div>
+    <p><strong>2. Melbourne Skydeck VR:</strong></p>
+    <div style="margin-bottom: 25px; padding: 10px; border: 1px solid #eee; border-radius: 10px;">
+    <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Melbourne Skydeck + Voyager VR</p>
+    <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> Tarde (Flexible)</p>
+    <p style="margin: 5px 0;"><strong>🗺️ Punto de encuentro:</strong> 
+        <a href="https://maps.google.com/?q=Melbourne+Skydeck" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+    </p>
+    <p style="margin: 5px 0;"><strong>📝 Descripción:</strong> Vistas de 360° desde el rascacielos más alto del hemisferio sur, incluyendo la experiencia de realidad virtual Voyager.</p>
+    <p style="margin: 5px 0; font-size: 0.85rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+        <strong>⚠️ Nota:</strong> Ideal ir una hora antes del atardecer para ver la ciudad de día y de noche.
+    </p>
+</div>
+
+    
+</div>
+
+               
             </div>
 
             <div class="day-block">
                 <p><strong>MARTES 18: Great Ocean Road</strong></p>
-                <div class="activity-card">
-                    <p><strong>Great Ocean Road & 12 Apostles:</strong></p>
-                    <p style="font-size: 0.85rem;">Recogida 07:40. Todo el día. <a href="https://maps.google.com/?cid=16966774294449644254&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank">Ver Mapa</a></p>
-                </div>
+                <div style="margin-bottom: 25px; padding: 10px; border: 1px solid #eee; border-radius: 10px;">
+    <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Great Ocean Road & 12 Apostles</p>
+    <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> Recogida a las 7:40. Todo el día (Aprox. 12h)</p>
+    <p style="margin: 5px 0;"><strong>🗺️ Punto de encuentro:</strong> 
+        <a href="https://maps.google.com/?cid=16966774294449644254&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ
+" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+    </p>
+    <p style="margin: 5px 0;"><strong>📝 Descripción:</strong> Una de las carreteras costeras más espectaculares del mundo. Visita a los 12 Apóstoles, Loch Ard Gorge y avistamiento de koalas salvajes.</p>
+    <p style="margin: 5px 0; font-size: 0.85rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+        <strong>⚠️ Nota:</strong> El clima en la costa cambia rápido; lleva una chaqueta cortavientos aunque haga sol en la ciudad.
+    </p>
+</div>
             </div>
 
             <div class="day-block">
                 <p><strong>MIÉRCOLES 19: Phillip Island</strong></p>
-                <div class="activity-card">
-                    <p><strong>Penguin Parade:</strong></p>
-                    <p style="font-size: 0.85rem;">Recogida 11:45. Regreso noche. <a href="https://maps.app.goo.gl/gvwp9B2FD5bkUnKD7?g_st=ic" target="_blank">Ver Mapa</a></p>
-                </div>
+               <div style="margin-bottom: 25px; padding: 10px; border: 1px solid #eee; border-radius: 10px;">
+    <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Phillip Island Penguin Parade</p>
+    <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> Recogida a las 11:45 y vuelta a las 21:45 (Aprox. 9'5h)</p>
+    <p style="margin: 5px 0;"><strong>🗺️ Punto de encuentro:</strong> 
+        <a href="https://maps.app.goo.gl/gvwp9B2FD5bkUnKD7?g_st=ic" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+    </p>
+    <p style="margin: 5px 0;"><strong>📝 Descripción:</strong> Excursión para ver koalas y el desfile de los pingüinos enanos regresando a sus nidos al anochecer tras un día de pesca.</p>
+    <p style="margin: 5px 0; font-size: 0.85rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+        <strong>⚠️ Nota:</strong> Hace MUCHO frío al estar quietos en las gradas junto al mar de noche. Ropa térmica recomendada.
+    </p>
+</div>
             </div>
 
             <div class="day-block">
                 <p><strong>JUEVES 20: Melbourne Park</strong></p>
-                <div class="activity-card">
-                    <p><strong>Sede Australian Open:</strong></p>
-                    <p style="font-size: 0.85rem;">Tour y experiencia en pista reservada. <a href="https://maps.app.goo.gl/tkrajWeAJ7XYCw5E9?g_st=ic" target="_blank">Ver Mapa</a></p>
-                </div>
+                <div style="margin-bottom: 25px; padding: 10px; border: 1px solid #eee; border-radius: 10px;">
+    <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Melbourne Park (Sede Australian Open)</p>
+    <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> 9:30 (Tour de 3h aprox)</p>
+    <p style="margin: 5px 0;"><strong>🗺️ Punto de encuentro:</strong> 
+        <a href="https://maps.app.goo.gl/tkrajWeAJ7XYCw5E9?g_st=ic" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+    </p>
+    <p style="margin: 5px 0;"><strong>📝 Descripción:</strong> Visita a las instalaciones del primer Grand Slam del año, incluyendo la Rod Laver Arena y los vestuarios de los jugadores.</p>
+    <p style="margin: 5px 0; font-size: 0.85rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+        <strong>⚠️ Nota:</strong> Tenemos reservada la experiencia deportiva en pistas, allí nos dan raqueta y pelotas.
+    </p>
+</div>
+
             </div>
             
             <div class="day-block">
-                <p><strong>VIERNES 21: Traslado</strong></p>
-                <div class="activity-card">
-                    <strong>Vuelo QF1596:</strong> MEL ➔ HTI (08:15 — 11:20)<br>
-                    <a href="https://maps.google.com/?q=Melbourne+Airport" target="_blank" class="btn-maps" style="background: #4285F4;">🚖 Al Aeropuerto</a>
+                <p><strong>VIERNES 21: Rumbo al Paraíso</strong></p>
+                <div style="margin-left: 10px; border-left: 2px solid #005bb7; padding-left: 10px;">
+                    <p><strong>1. Traslado (05:45):</strong></p>
+                    <a href="https://maps.google.com/?q=Melbourne+Airport" target="_blank" class="btn-maps" style="background: #4285F4; margin-bottom: 10px;">🚖 Ir al Aeropuerto (Uber o taxi)</a>
+
+                    <p><strong>2. Vuelo QF1596:</strong></p>
+                    <div class="vuelo-info">
+                        <strong>MEL ➔ HTI</strong><br>
+                        🕒 08:15 — 11:20 | ⏳ 3h 05m<br>
+                        🎫 Localizador: <strong>D9HGRL</strong>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,110 +225,278 @@
     <section id="hamilton" class="card">
         <h2>🏝️ Etapa 2: Hamilton Island</h2>
         <p class="dates-text">21 - 26 de Agosto</p>
+      <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-20.355&lon=148.955&detailLat=-20.355&detailLon=148.955&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">HAMILTON ISLAND</p>
+    </div>
+
+       <h3>🏨 Alojamiento</h3>
+<p><strong>Reef View Hotel</strong><br>
+<span style="font-size: 0.9rem; color: #555;">📍 12-14 Resort Dr, Hamilton Island QLD 4803</span></p>
+
+<div style="font-size: 0.85rem; background: #e8f5e9; padding: 10px; border-radius: 8px; border-left: 4px solid #2e7d32; margin-bottom: 15px;">
+    <strong>🚐 Traslado incluido:</strong> El shuttle del hotel os recogerá en el aeropuerto a la llegada de vuestro vuelo. Solo hay que buscar el mostrador/personal del Reef View Hotel.
+</div>
+
+<h3>📅 Planning</h3>
+<div style="font-size: 0.9rem;">
+    
+    <div class="day-block">
+    <p><strong>VIERNES 21: Llegada al Paraíso</strong></p>
+    <ul style="padding-left: 20px;">
+        <li><strong>11:20:</strong> Aterrizaje en HTI y traslado al Reef View Hotel.</li>
+        <li><strong>12:30 - Comida en la Marina:</strong> Paseo hasta la zona del puerto para comer en <em>Marina Tavern</em> (ideal porque no requiere reserva).</li>
+        <li>Check-in y primera toma de contacto con la isla.</li>
         
-        <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
-            <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-20.355&lon=148.955&detailLat=-20.355&detailLon=148.955&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <li style="margin-top: 10px;"><strong>🌅 Atardecer en One Tree Hill (A pie):</strong>
+            <ul style="padding-left: 15px; font-size: 0.85rem; color: #444;">
+                <li><strong>Hora de salida:</strong> Se recomienda empezar la subida sobre las <strong>16:45</strong>.</li>
+                <li><strong>Caminata:</strong> Son unos 15-20 minutos de subida empinada desde el hotel.</li>
+                <li><strong>El Atardecer:</strong> El sol se pone aproximadamente a las <strong>17:45</strong> en esta fecha.</li>
+                <li><strong>Vestimenta:</strong> Calzado deportivo (la cuesta es pronunciada) y una chaqueta ligera, ya que al bajar tras ponerse el sol la temperatura refresca rápidamente en agosto.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <a href="https://maps.google.com/?cid=12145781558278034580&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ
+" target="_blank" class="btn-maps" style="background: #4285F4; flex: 1; text-align: center;">📍 Ubicación Hotel</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=One+Tree+Hill+Hamilton+Island" target="_blank" class="btn-maps" style="background: #fb8c00; flex: 1; text-align: center;">🌅 One Tree Hill</a>
+    </div>
+</div>
+
+
+   <div class="day-block">
+    <p><strong>SÁBADO 22: <span style="color: #ce1126;">(PENDIENTE DE RESERVAR)</span> Whitehaven Beach Chill & Grill</strong></p>
+    
+    <div style="margin-bottom: 10px; padding: 15px; border: 1px solid #eee; border-radius: 10px; background: #fff;">
+        <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Whitehaven Beach & Hill Inlet Chill & Grill (Full Day)</p>
+        <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> Salida 08:30 AM — Regreso 05:00 PM (Aprox.)</p>
+        <p style="margin: 5px 0;"><strong>🗺️ Punto de encuentro:</strong> Marina de Hamilton Island (Jetty de Cruise Whitsundays). 
+            <a href="https://maps.app.goo.gl/vso76QUwzJJsfSrKA?g_st=ic" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+        </p>
+        
+        <p style="margin: 10px 0 5px 0;"><strong>📝 Descripción:</strong></p>
+        <ul style="margin: 0; padding-left: 20px; font-size: 0.85rem; color: #444;">
+            <li>Crucero escénico por las islas Whitsunday hasta la famosa arena de sílice blanca.</li>
+            <li><strong>Hill Inlet:</strong> Caminata guiada siguiendo los pasos de los Ngaro hasta el mirador más icónico de Australia.</li>
+            <li><strong>Tiempo de Relax:</strong> Hasta 6 horas en Whitehaven Beach para nadar o jugar en la arena.</li>
+            <li><strong>Comida:</strong> Almuerzo estilo BBQ australiana preparado por la tripulación en la misma playa.</li>
+        </ul>
+
+        <p style="margin: 10px 0 5px 0;"><strong>🎒 Qué llevar (Imprescindible):</strong></p>
+        <div style="font-size: 0.85rem; background: #f0f7ff; padding: 10px; border-radius: 8px; color: #004085;">
+            🩱 Bañador y toalla de playa.<br>
+            🧴 Protector solar, gorra y gafas de sol.<br>
+            👟 Calzado cómodo para caminar (para la subida al mirador de Hill Inlet).<br>
+            🧥 Chaqueta ligera o jersey (el trayecto en barco puede ser fresco por el viento).<br>
+            📷 Cámara para las mejores fotos del viaje.
         </div>
 
-        <h3>🏨 Alojamiento</h3>
-        <p><strong>Reef View Hotel</strong></p>
-        <div style="font-size: 0.85rem; background: #e8f5e9; padding: 10px; border-radius: 8px; border-left: 4px solid #2e7d32; margin-bottom: 15px;">
-            🚐 <strong>Traslado incluido:</strong> Shuttle del hotel en el aeropuerto.
+        <p style="margin: 10px 0 0 0; font-size: 0.8rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+            <strong>⚠️ Nota:</strong> La excursión incluye trajes de protección (stinger suits) para el baño y té por la mañana y tarde.
+        </p>
+    </div>
+</div>
+
+
+   <div class="day-block">
+    <p><strong>DOMINGO 23: Relax y Exploración de la Isla</strong></p>
+    
+    <div style="margin-bottom: 15px; padding: 15px; border: 1px solid #e3f2fd; border-radius: 10px; background: #f1f8ff;">
+        <p style="margin: 0 0 10px 0; color: #0056b3;"><strong>💎 Incluido con vuestra estancia (Reef View Hotel):</strong></p>
+        <ul style="margin: 0; padding-left: 20px; font-size: 0.85rem; color: #444;">
+            <li><strong>Deportes acuáticos (Catseye Beach):</strong> Catamaranes, windsurf, kayaks, paddleboard y equipo de snorkel.</li>
+            <li><strong>Instalaciones:</strong> Uso de gimnasio, spa, sauna y alquiler de pistas de tenis.</li>
+        </ul>
+    </div>
+
+    <div style="padding: 10px; border: 1px solid #eee; border-radius: 10px;">
+        <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Hamilton Island Wildlife</p>
+        <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> Abierto todos los días de 07:30 a 15:30</p>
+        <p style="margin: 5px 0;"><strong>🗺️ Ubicación:</strong> 1 Resort Dr (A 2 min andando del hotel). 
+            <a href="https://maps.google.com/?cid=2402923167513886148&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+        </p>
+        <p style="margin: 5px 0;"><strong>📝 Descripción:</strong> Encuentro con fauna australiana en miniatura. Podréis ver koalas, canguros, dingos y reptiles. Es un centro pequeño y muy manejable.</p>
+        <p style="margin: 5px 0; font-size: 0.85rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+            <strong>⚠️ Nota:</strong> Si queréis desayunar con koalas, conviene reservar o ir muy temprano (suelen cerrar la cocina sobre las 10:00-10:30 AM).
+        </p>
+    </div>
+</div>
+
+
+    <div class="day-block">
+    <p><strong>LUNES 24: <span style="color: #ce1126;">(PENDIENTE DE RESERVAR)</span> Great Barrier Reef Full Day Adventure</strong></p>
+    
+    <div style="margin-bottom: 10px; padding: 15px; border: 1px solid #eee; border-radius: 10px; background: #fff;">
+        <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Great Barrier Reef Full Day Adventure (Cruise Whitsundays)</p>
+        <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> Salida 09:00 AM — Regreso 05:00 PM</p>
+        <p style="margin: 5px 0;"><strong>🗺️ Punto de encuentro:</strong> Marina de Hamilton Island (Jetty de Cruise Whitsundays). 
+            <a href="https://maps.app.goo.gl/M81k3cHbtTbtfHx88?g_st=ic" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+        </p>
+        
+        <p style="margin: 10px 0 5px 0;"><strong>📝 Descripción:</strong></p>
+        <ul style="margin: 0; padding-left: 20px; font-size: 0.85rem; color: #444;">
+            <li>Travesía hasta el pontón "Reefworld" amarrado permanentemente en <strong>Hardy Reef</strong>, en el borde exterior de la Gran Barrera.</li>
+            <li><strong>4 horas en el arrecife:</strong> Snorkel con equipo completo incluido.</li>
+            <li><strong>Para no mojarse:</strong> Acceso al observatorio submarino y tour guiado en semisumergible.</li>
+            <li><strong>Comidas:</strong> Incluye té por la mañana y por la tarde, además de un almuerzo tipo buffet.</li>
+        </ul>
+
+        <p style="margin: 10px 0 5px 0;"><strong>🎒 Qué llevar (Imprescindible):</strong></p>
+        <div style="font-size: 0.85rem; background: #f0f7ff; padding: 10px; border-radius: 8px; color: #004085;">
+            🩱 Bañador y toalla.<br>
+            🧴 Protector solar, gorra y gafas de sol.<br>
+            🧥 Chaqueta ligera o jersey (el viento en el pontón exterior y el trayecto puede ser frío).<br>
+            💳 Tarjeta de crédito para extras opcionales (buceo, safaris de snorkel guiados o fotos).
         </div>
 
-        <h3>📅 Planning</h3>
-        <div style="font-size: 0.9rem;">
-            <div class="day-block">
-                <p><strong>VIERNES 21: Llegada</strong></p>
-                <div class="activity-card">
-                    <p>Comida en Marina Tavern y atardecer en One Tree Hill (17:45).</p>
-                    <div style="display: flex; gap: 5px; flex-wrap: wrap;">
-                        <a href="https://maps.google.com/?cid=12145781558278034580&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="btn-maps" style="background: #4285F4;">📍 Hotel</a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=One+Tree+Hill+Hamilton+Island" target="_blank" class="btn-maps" style="background: #fb8c00;">🌅 Atardecer</a>
-                    </div>
-                </div>
-            </div>
+        <p style="margin: 10px 0 0 0; font-size: 0.8rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+            <strong>⚠️ Nota:</strong> Se proporcionan trajes de neopreno y de protección (stinger suits). Si tenéis mareos fáciles, considerad tomar algo antes de salir, ya que es mar abierto.
+        </p>
+    </div>
+</div>
 
-            <div class="day-block">
-                <p><strong>SÁBADO 22: <span style="color:var(--rojo-au)">PENDIENTE</span></strong></p>
-                <div class="activity-card">
-                    <strong>Whitehaven Beach Chill & Grill:</strong> Full day. <a href="https://maps.app.goo.gl/vso76QUwzJJsfSrKA?g_st=ic" target="_blank">Ver Mapa</a>
-                </div>
-            </div>
 
-            <div class="day-block">
-                <p><strong>DOMINGO 23: Relax</strong></p>
-                <div class="activity-card">
-                    Uso de kayaks/snorkel + Hamilton Island Wildlife. <a href="https://maps.google.com/?cid=2402923167513886148&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank">Ver Mapa</a>
-                </div>
-            </div>
+    <div class="day-block">
+    <p><strong>MARTES 25: Cima Passage Peak y Tarde de Relax</strong></p>
+    
+    <div style="margin-bottom: 15px; padding: 10px; border: 1px solid #eee; border-radius: 10px;">
+        <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Trekking a Passage Peak</p>
+        <p style="margin: 5px 0;"><strong>⏰ Horario recomendado:</strong> Salida a las 07:00 AM (Duración: 2h ida y vuelta)</p>
+        <p style="margin: 5px 0;"><strong>🗺️ Inicio de ruta:</strong> Extremo este de Catseye Beach (Scenic Trailhead).
+            <a href="https://maps.google.com/?cid=4997483490537238497&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Ver en Google Maps →</a>
+        </p>
+        <p style="margin: 5px 0;"><strong>📝 Descripción:</strong> La ruta más icónica de la isla. Una subida exigente con bastantes escalones que recompensa con la mejor vista panorámica de 360° de todas las Whitsundays.</p>
+        <p style="margin: 5px 0; font-size: 0.85rem; background: #fffde7; padding: 8px; border-radius: 5px; border-left: 4px solid #fbc02d;">
+            <strong>⚠️ Nota:</strong> Es una subida empinada. Imprescindible llevar agua, protección solar y calzado deportivo cerrado. Al ir temprano evitaréis el calor más fuerte del mediodía.
+        </p>
+    </div>
 
-            <div class="day-block">
-                <p><strong>LUNES 24: <span style="color:var(--rojo-au)">PENDIENTE</span></strong></p>
-                <div class="activity-card">
-                    <strong>Great Barrier Reef Full Day:</strong> Hardy Reef. <a href="https://maps.app.goo.gl/M81k3cHbtTbtfHx88?g_st=ic" target="_blank">Ver Mapa</a>
-                </div>
-            </div>
+    <div style="padding: 10px; border: 1px solid #e3f2fd; border-radius: 10px; background: #f1f8ff;">
+        <p style="margin: 5px 0;"><strong>🏝️ Tarde: Descanso Total</strong></p>
+        <p style="margin: 5px 0; font-size: 0.85rem; color: #444;">Última tarde para disfrutar de la piscina del hotel o de las actividades gratuitas en la playa (kayaks, paddle surf) tras el esfuerzo de la mañana.</p>
+    </div>
+</div>
 
-            <div class="day-block">
-                <p><strong>MARTES 25: Passage Peak</strong></p>
-                <div class="activity-card">
-                    Senderismo temprano (07:00). Tarde de piscina. <a href="https://maps.google.com/?cid=4997483490537238497&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank">Ver Mapa</a>
-                </div>
+
+    <div class="day-block" style="border-bottom: none;">
+        <p><strong>MIÉRCOLES 26: Rumbo a Sídney</strong></p>
+        <div style="margin-left: 10px; border-left: 2px solid var(--rojo-au); padding-left: 10px;">
+            <p><strong>1. Check-out y Traslado (11:30):</strong></p>
+            <p style="font-size: 0.85rem; color: #555;">Traslado incluido al aeropuerto de Hamilton Island por el hotel.</p>
+
+            <p><strong>2. Vuelo QF579 (Qantas):</strong></p>
+            <div class="vuelo-info" style="border-left: 3px solid #e11b22;">
+                <strong>🛫 HTI ➔ SYD</strong><br>
+                26 Ago 13:00 — 15:20 | <small>⏳ 2h 20min</small><br>
+                🎫 Localizador: <strong>D9HGRL</strong>
             </div>
         </div>
+    </div>
+</div>
     </section>
 
     <section id="sydney" class="card">
         <h2>🏙️ Etapa 3: Sídney</h2>
         <p class="dates-text">26 - 31 de Agosto</p>
+          <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
+        <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-33.868&lon=151.209&detailLat=-33.868&detailLon=151.209&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+        <p style="text-align: center; font-size: 0.8rem; margin: 5px 0;">SÍDNEY</p>
+    </div>
 
-        <div class="weather-item" style="border-radius: 12px; overflow: hidden; margin-bottom: 15px;">
-            <iframe width="100%" height="200" src="https://embed.windy.com/embed2.html?lat=-33.868&lon=151.209&detailLat=-33.868&detailLon=151.209&width=650&height=200&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=forecast&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
-        </div>
 
         <h3>🏨 Alojamiento</h3>
-        <p><strong>Meriton Suites Sussex Street</strong></p>
-        <a href="https://www.google.com/maps/dir/Sydney+Airport+(SYD),+Mascot+NSW,+Australia/Meriton+Suites+Sussex+Street,+Sydney/" target="_blank" class="btn-maps">🚖 Ruta Aeropuerto</a>
+<p><strong>Meriton Suites Sussex Street</strong><br>
+<span style="font-size: 0.9rem; color: #555;">📍 231 Sussex St, Sydney NSW 2000</span></p>
+<a href="https://www.google.com/maps/dir/Sydney+Airport+(SYD),+Mascot+NSW,+Australia/Meriton+Suites+Sussex+Street,+Sydney/" target="_blank" class="btn-maps">🚖 Ver ruta desde Aeropuerto (Uber/Taxi)</a>
 
-        <h3>📅 Planning</h3>
-        <div style="font-size: 0.9rem;">
-            <div class="day-block">
-                <p><strong>MIÉRCOLES 26: Llegada</strong></p>
-                <div class="activity-card">
-                    <p>Paseo por <a href="https://maps.google.com/?cid=8327007198099986160&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank">Darling Harbour</a> y cena en <a href="https://maps.google.com/?cid=12111866326771840061&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank">Darling Quarter</a>.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Meriton+Suites+Sussex+Street+Sydney" target="_blank" class="btn-maps" style="background: #4285F4;">📍 Ubicación Hotel</a>
+<h3>📅 Planning</h3>
+<div style="font-size: 0.9rem;">
+    
+    <div class="day-block">
+    <p><strong>MIÉRCOLES 26: Llegada a Sídney</strong></p>
+    <ul style="padding-left: 20px;">
+        <li><strong>15:20:</strong> Aterrizaje en SYD y traslado al hotel en Sussex St.</li>
+        <li><strong>Paseo por <a href="https://maps.google.com/?cid=8327007198099986160&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Darling Harbour</a>:</strong> Situado a solo 2 minutos andando, es el lugar ideal para el primer contacto con la ciudad.</li>
+        
+        <li style="margin-top: 10px;"><strong>🍽️ Propuesta de Cena: <a href="https://maps.google.com/?cid=12111866326771840061&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: bold;">Darling Quarter</a></strong>
+            <p style="margin: 5px 0; font-size: 0.85rem; color: #444;">Esta zona es famosa por su gran variedad de restaurantes con terrazas al aire libre. Podéis elegir entre opciones como comida tailandesa, italiana o hamburguesas gourmet en un ambiente muy animado frente al parque.</p>
+        </li>
+    </ul>
+    
+    <div style="margin-top: 10px;">
+        <a href="https://www.google.com/maps/search/?api=1&query=Meriton+Suites+Sussex+Street+Sydney" target="_blank" class="btn-maps" style="background: #4285F4;">📍 Ubicación Hotel</a>
+    </div>
+</div>
+
+
+    <div class="day-block">
+        <p><strong>JUEVES 27: Actividad por definir</strong></p>
+        <div style="margin-bottom: 10px; padding: 10px; border: 1px dashed #ccc; border-radius: 10px; background: #fafafa; color: #777;">
+            <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Pendiente de reservar</p>
+            <p style="margin: 5px 0;"><strong>⏰ Horario:</strong> ---</p>
+            <p style="margin: 5px 0;"><strong>📝 Descripción:</strong> Espacio reservado para la Opera House, The Rocks o Bondi Beach.</p>
+        </div>
+    </div>
+
+    <div class="day-block">
+        <p><strong>VIERNES 28: Actividad por definir</strong></p>
+        <div style="margin-bottom: 10px; padding: 10px; border: 1px dashed #ccc; border-radius: 10px; background: #fafafa; color: #777;">
+            <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Pendiente de reservar</p>
+        </div>
+    </div>
+
+    <div class="day-block">
+        <p><strong>SÁBADO 29: Actividad por definir</strong></p>
+        <div style="margin-bottom: 10px; padding: 10px; border: 1px dashed #ccc; border-radius: 10px; background: #fafafa; color: #777;">
+            <p style="margin: 5px 0;"><strong>📍 Nombre:</strong> Pendiente de reservar</p>
+        </div>
+    </div>
+
+    <div class="day-block" style="border-bottom: none;">
+        <p><strong>DOMINGO 30: Último día y Regreso</strong></p>
+        <div style="margin-left: 10px; border-left: 2px solid #ce1126; padding-left: 10px;">
+            <p><strong>1. Traslado al Aeropuerto (18:00):</strong></p>
+            <p style="font-size: 0.85rem; color: #555;">Check-out y tiempo libre hasta el traslado al aeropuerto de Sídney.</p>
+
+            <p><strong>2. Vuelos de Vuelta (Turkish Airlines):</strong></p>
+            <div class="vuelo-info" style="border-left: 3px solid #c1121f; padding: 15px;">
+                <div style="margin-bottom: 5px;">
+                    <strong>🛫 Sídney ➔ Estambul</strong><br>
+                    30 Ago 21:10 — 31 Ago 11:40 | <small>⏳ 21h aprox (con parada técnica en Kuala Lumpur)</small>
                 </div>
-            </div>
-
-            <div class="day-block">
-                <p><strong>JUEVES/SÁBADO:</strong></p>
-                <div class="activity-card" style="border-style: dashed; color: #777;">
-                    Días por definir (Opera House, The Rocks, Bondi).
+                
+                <div style="font-size: 0.8rem; color: #777; margin: 8px 0 8px 20px; border-left: 1px dashed #ccc; padding-left: 10px;">
+                    🛑 Escala en Estambul: <strong>3h 05min</strong>
                 </div>
-            </div>
 
-            <div class="day-block">
-                <p><strong>DOMINGO 30: Regreso</strong></p>
-                <div class="vuelo-info" style="border-left: 3px solid var(--rojo-au);">
-                    <strong>🛫 Sídney ➔ Estambul (21:10)</strong><br>
-                    <strong>🛫 Estambul ➔ Valencia (14:45)</strong>
+                <div>
+                    <strong>🛫 Estambul ➔ Valencia</strong><br>
+                    31 Ago 14:45 — 31 Ago 17:45 | <small>⏳ 3h 00min</small>
                 </div>
             </div>
         </div>
+    </div>
+</div>
     </section>
 
-    <section id="todo" class="card">
-        <h2>📝 Pendientes</h2>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div class="todo-item"><input type="checkbox"> 🛂 Visados (eVisitor)</div>
-            <div class="todo-item"><input type="checkbox"> 🏥 Seguro de viaje</div>
-            <div class="todo-item"><input type="checkbox"> 💵 Cambio de moneda</div>
-            <div class="todo-item"><input type="checkbox"> 📱 Tarjeta SIM / eSIM</div>
-            <div class="todo-item"><input type="checkbox"> 🔌 Adaptadores Enchufe (Tipo I)</div>
-            <div class="todo-item"><input type="checkbox"> 🛺 Alquiler Buggy Hamilton</div>
-        </div>
-    </section>
+   <section id="todo" class="card">
+    <h2>📝 Pendientes</h2>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="todo-item"><input type="checkbox"> <span>🛂 Sacar visados (ESTA / eVisitor)</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>🏥 Revisar seguro de viaje y salud</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>💵 Cambiar / Organizar dinero (Efectivo/Tarjeta)</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>📱 Gestionar tarjeta SIM / eSIM y fundas acuáticas</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>🚕 Reservar parking aeropuerto / Taxi</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>✈️ Check-in de vuelos (Turkish & Qantas)</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>🥂 Localizar Salas VIP en escalas</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>🎟️ Reservar excursiones restantes</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>🔌 Revisar adaptadores de enchufes (Tipo I)</span></div>
+        <div class="todo-item"><input type="checkbox"> <span>🛺 Decidir alquiler de Buggy (Hamilton Island)</span></div>
+    </div>
+</section>
+
 
     <section id="documentos">
         <a href="#" class="btn-drive">📂 DRIVE: Documentación y Reservas</a>
@@ -267,7 +513,7 @@
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const el = document.getElementById("timer");
         if (distance < 0) { el.innerHTML = "¡A disfrutar! 🐨"; } 
-        else { el.innerHTML = "⏳ Faltan " + days + " días y " + hours + "h"; }
+        else { el.innerHTML = "⏳ Faltan " + days + " días y " + hours + "h para la aventura"; }
     }
     setInterval(updateTimer, 60000);
     updateTimer();
